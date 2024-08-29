@@ -4,16 +4,21 @@ const yesBtn = document.getElementById('yesBtn');
 const container = document.querySelector('.container');
 
 function moveButton() {
-    const btnWidth = noBtn.clientWidth;
-    const btnHeight = noBtn.clientHeight;
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+
+    // Obtener los límites del contenedor
+    const containerRect = container.getBoundingClientRect();
 
     // Limites calculados para que el botón no se salga del contenedor
-    const maxX = container.clientWidth - btnWidth;
-    const maxY = container.clientHeight - btnHeight;
+    const maxX = containerRect.width - btnWidth;
+    const maxY = containerRect.height - btnHeight;
 
+    // Posicionamiento aleatorio dentro de los límites
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
 
+    // Aplicar la posición dentro del contenedor
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
 }
