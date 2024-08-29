@@ -1,7 +1,8 @@
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 
-noBtn.addEventListener('mouseover', () => {
+// Función para mover el botón "no" a una posición aleatoria
+function moveButton() {
     const btnWidth = noBtn.clientWidth;
     const btnHeight = noBtn.clientHeight;
 
@@ -12,9 +13,16 @@ noBtn.addEventListener('mouseover', () => {
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
 
+    noBtn.style.position = 'absolute'; // Asegura que el botón esté en posición absoluta
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
-});
+}
+
+// Para escritorio: se mueve cuando el mouse pasa por encima
+noBtn.addEventListener('mouseover', moveButton);
+
+// Para dispositivos móviles: se mueve cuando se toca
+noBtn.addEventListener('touchstart', moveButton);
 
 yesBtn.addEventListener('click', () => {
     window.location.href = 'mensaje.html';
