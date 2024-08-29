@@ -1,3 +1,4 @@
+/* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
@@ -18,8 +19,10 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     max-width: 500px;
     width: 100%;
-    position: relative;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    position: relative; /* Necesario para posicionar los botones dentro del contenedor */
     animation: fadeIn 1s ease-in-out;
+    overflow: hidden; /* Asegura que los botones no se desborden */
 }
 
 @keyframes fadeIn {
@@ -30,7 +33,7 @@ body {
 h1 {
     font-size: 2.8em;
     color: #2d3436;
-    margin-bottom: 50px;
+    margin-bottom: 30px; /* Ajusta el margen inferior para más espacio entre el título y los botones */
     line-height: 1.2;
     letter-spacing: 1px;
 }
@@ -38,7 +41,7 @@ h1 {
 .button-group {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 20px; /* Espacio entre los botones */
 }
 
 button {
@@ -51,7 +54,7 @@ button {
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     outline: none;
-    position: relative;
+    position: absolute; /* Cambiado para que el botón se mueva dentro del contenedor */
     z-index: 1;
     overflow: hidden;
 }

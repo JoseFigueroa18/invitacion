@@ -1,19 +1,19 @@
+// script.js
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
+const container = document.querySelector('.container');
 
-// Función para mover el botón "no" a una posición aleatoria
 function moveButton() {
     const btnWidth = noBtn.clientWidth;
     const btnHeight = noBtn.clientHeight;
 
-    // Limites calculados para que el botón no se salga de la pantalla
-    const maxX = window.innerWidth - btnWidth;
-    const maxY = window.innerHeight - btnHeight;
+    // Limites calculados para que el botón no se salga del contenedor
+    const maxX = container.clientWidth - btnWidth;
+    const maxY = container.clientHeight - btnHeight;
 
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
 
-    noBtn.style.position = 'absolute'; // Asegura que el botón esté en posición absoluta
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
 }
